@@ -1,6 +1,26 @@
 # nuistPeerReview
 南京信息工程大学同学互评自动填写
 
+# 方法一：javaScript
+
+- 班里一位前端同学的方法
+
+- 打开需要填写的界面，按F12，在控制台粘贴以下代码然后回车
+
+- ```js
+  document.querySelectorAll("iframe").forEach((e) => {
+     e.contentWindow.document.querySelectorAll('.td1').forEach((dom) => {
+         if (dom.id[dom.id.length - 3] === '6') {
+             dom.value = 5;
+         } else {
+             dom.value = 6;
+         }
+     });
+  })
+  ```
+
+# 方法二：Selenium+python
+
 ## 1.安装selenium
 
 - 参考自：
